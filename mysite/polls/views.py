@@ -25,6 +25,7 @@ def index(request):
     }
     return render(request, 'polls/index.html', context)
 
+@login_required(login_url="/polls/login/")
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     try:
@@ -71,7 +72,7 @@ def logout_(request):
         return redirect('polls:index')
 
 
-@login_required(login_url="/polls/login/")
+#@login_required(login_url="/polls/login/")
 def create(request):
     if request.method == 'POST':
         question_form = CreateQuestionForm(data=request.POST)
