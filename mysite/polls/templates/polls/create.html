@@ -1,0 +1,19 @@
+{% extends 'polls/layout.html' %}
+<!DOCTYPE html>
+<html>
+  {% block content %}
+  <body>
+    <h2>Create Poll</h2>
+    <form class="site-form" action="{% url 'polls:create' %}" method="post">
+      {% csrf_token %}
+      {{ question_form }}
+      <br>
+        {% for c in choice_form %}
+            {{ c }}
+            <br>
+        {% endfor %}
+      <button type="submit">Create</button>
+    </form>
+  </body>
+  {% endblock %}
+</html>

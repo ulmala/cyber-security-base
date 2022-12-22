@@ -1,0 +1,14 @@
+{% extends 'polls/layout.html' %}
+<!DOCTYPE html>
+<html>
+  {% block content %}
+  <body>
+    <h2>Register</h2>
+    <form class="form-site" action="{% url 'polls:register' %}" method="post">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" Value="Register">
+    </form>
+  </body>
+  {% endblock %}
+</html>

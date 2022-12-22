@@ -1,0 +1,17 @@
+{% extends 'polls/layout.html' %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Log In</title>
+  </head>
+  {% block content %}
+  <body>
+    <h2>Log In</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form}}
+        <button type="submit">Log In</button>
+    </form>
+  </body>
+  {% endblock %}
+</html>
