@@ -10,7 +10,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .models import Choice, Question
 from .forms import CreateQuestionForm, CreateChoiceForm
 
-logger = logging.getLogger('polls')
+#logger = logging.getLogger('polls')
 
 class DetailView(generic.DetailView):
     model = Question
@@ -59,7 +59,7 @@ def login_(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            logger.info(f'{user.username} logged in')
+            #logger.info(f'{user.username} logged in')
             if 'next' in request.POST:
                 return redirect(request.POST.get('next'))
             else:
@@ -71,7 +71,7 @@ def login_(request):
 def logout_(request):
     if request.method == 'POST':
         logout(request)
-        logger.info(f'{request.user.get_username()} logged out')
+        #logger.info(f'{request.user.get_username()} logged out')
         return redirect('polls:index')
 
 
