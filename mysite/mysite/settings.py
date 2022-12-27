@@ -149,3 +149,6 @@ STATIC_URL = '/static/'
 #         },
 #     },
 # }
+
+LOGIN_URL = '/polls/login'
+LOGIN_REDIRECT_URL = '/polls/index'
