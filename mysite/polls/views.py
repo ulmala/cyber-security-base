@@ -73,7 +73,7 @@ def logout_(request):
         logout(request)
         #logger.info(f'{request.user.get_username()} logged out')
         return redirect('polls:index')
-
+    #return redirect('polls:index')
 
 #@login_required(login_url="/polls/login/")
 def create(request):
