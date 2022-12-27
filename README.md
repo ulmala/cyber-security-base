@@ -12,9 +12,10 @@ This app contains five flaws from [OWASP Top Ten list](https://owasp.org/www-pro
 
 1. clone repository to your device
 2. create virtual environment: `python -m venv .venv`
-3. install requirements: `pip install -r requirements.txt`
-4. cd to "mysite" and run `python manage.py runserver`
-5. go to http://127.0.0.1:8000/polls/ with your browser
+3. activate virtual environment: `source .venv/bin/activate`
+4. install requirements: `pip install -r requirements.txt`
+5. cd to "mysite" and run `python manage.py runserver`
+6. go to http://127.0.0.1:8000/polls/ with your browser
 
 ## Flaws
 
