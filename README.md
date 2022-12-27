@@ -16,6 +16,8 @@ This app contains five flaws from [OWASP Top Ten list](https://owasp.org/www-pro
 4. cd to "mysite" and run `python manage.py runserver`
 5. go to http://127.0.0.1:8000/polls/ with your browser
 
+## Flaws
+
 ### <ins>FLAW 1: [Identification and Authentication Failures](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/) 
 
 Flaw in source code [here](https://github.com/ulmala/cyber-security-base/blob/main/mysite/mysite/settings.py#L88).  
