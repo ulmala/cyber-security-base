@@ -14,8 +14,9 @@ This app contains five flaws from [OWASP Top Ten list](https://owasp.org/www-pro
 2. create virtual environment: `python -m venv .venv`
 3. activate virtual environment: `source .venv/bin/activate`
 4. install requirements: `pip install -r requirements.txt`
-5. cd to "mysite" and run `python manage.py runserver`
-6. go to http://127.0.0.1:8000/polls/ with your browser
+5. database is not included in repo so migrate changes by: `python manage.py migrate`
+6. cd to "mysite" and run `python manage.py runserver`
+7. go to http://127.0.0.1:8000/polls/ with your browser
 
 ## Flaws
 
@@ -42,7 +43,7 @@ This flaw can be fixed by uncommenting lines 89-100 from [here](https://github.c
 
 ### <ins>FLAW 2: [Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/) 
 
-Flaw in source code [here](https://github.com/ulmala/cyber-security-base/blob/main/mysite/polls/views.py#L75).  
+Flaw in source code [here](https://github.com/ulmala/cyber-security-base/blob/e41e9aea83ea5f3220e50e229e8f559676c87899/mysite/polls/views.py#L78).  
 
 This application has a flaw in access control which allows non registered users to create polls which should be only enabled for registered users (which is logged in).  
 
@@ -52,7 +53,7 @@ The default way to create a poll should be by clicking the "Create" link on the 
 But this is not enough, because it is not validated in the backend that the user is logged in. One can navigate to http://127.0.0.1:8000/polls/create (when not logged in) and the poll creation form is displayed and it can be filled and then submitted to the system.  
 
 How to fix:  
-To fix this flaw it needs to be validated also in the backend that the user is logged in. This can be done by uncommeting [this line](https://github.com/ulmala/cyber-security-base/blob/dff56297f04851ca16807f8b145f5d4b12baa239/mysite/polls/views.py#L75). 
+To fix this flaw it needs to be validated also in the backend that the user is logged in. This can be done by uncommeting [this line](https://github.com/ulmala/cyber-security-base/blob/e41e9aea83ea5f3220e50e229e8f559676c87899/mysite/polls/views.py#L78). 
 
 ### <ins>FLAW 3: [Security Logging and Monitoring Failures](https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/)
 
