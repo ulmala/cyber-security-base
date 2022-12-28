@@ -74,7 +74,7 @@ This application has a security configuration error in the server settings. Vari
 How to produce this error: When not logged in navigate to http://127.0.0.1:8000/polls/logout in the browser. Since no user is not logged in and GET request is not handled in the function [logout_](https://github.com/ulmala/cyber-security-base/blob/c6d2d339d94c6e1f6d1cfc18e36d8f3a6a6447f0/mysite/polls/views.py#L71) and the DEBUG variable is set to True, the server will return a view which has detailed information about the application.  
 
 How to fix: 
-* Variable [DEBUG](https://github.com/ulmala/cyber-security-base/blob/c6d2d339d94c6e1f6d1cfc18e36d8f3a6a6447f0/mysite/mysite/settings.py#L26) needs to be set to True and "127.0.0.1" needs to be added to list [ALLOWED_HOSTS](https://github.com/ulmala/cyber-security-base/blob/c6d2d339d94c6e1f6d1cfc18e36d8f3a6a6447f0/mysite/mysite/settings.py#L28) (when running this application locally)
+* Variable [DEBUG](https://github.com/ulmala/cyber-security-base/blob/c6d2d339d94c6e1f6d1cfc18e36d8f3a6a6447f0/mysite/mysite/settings.py#L26) needs to be set to False and "127.0.0.1" needs to be added to list [ALLOWED_HOSTS](https://github.com/ulmala/cyber-security-base/blob/c6d2d339d94c6e1f6d1cfc18e36d8f3a6a6447f0/mysite/mysite/settings.py#L28) (when running this application locally)
 * Uncomment [this](https://github.com/ulmala/cyber-security-base/blob/0319faea6cf8a04ed0b780e82f30f16a695895c6/mysite/polls/views.py#L76) line so if other than POST request is done, application is redirected to index page.
 
 ### <ins> FLAW 5: [Vulnerable and Outdated Components](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/)
